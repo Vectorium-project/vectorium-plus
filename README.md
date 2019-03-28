@@ -12,10 +12,6 @@ and X13 hashing algorithm.
 VectoriumPlus is an open source project and additional changes and fixes to those in
 the source code are managed by the community.
 
-Telegram: https://t.me/VCTPplus  
-Twitter: https://twitter.com/VectoriumPlusOrg  
-Forum: https://bitcointalk.org/index.php?topic=1066201.0
-
 
 What is VectoriumPlus?
 ----------------
@@ -27,7 +23,7 @@ out collectively by the network. VectoriumPlus Core is the name of open source
 software which enables the use of this currency.
 
 For more information, as well as an immediately useable, binary version of
-the VectoriumPlus Core software, see these [downloads](https://github.com/VectoriumPlusorg/VCTPwalletsource/releases).
+the VectoriumPlus Core software, see go to https://www.vectorium.co
 
 
 License
@@ -41,7 +37,6 @@ Development Process
 -------------------
 
 The latest default branch is regularly built and tested, but is not guaranteed to be
-completely stable. [Tags](https://github.com/VectoriumPlusorg/VCTPwalletsource/tags) are created
-regularly to indicate new official, stable release versions of VectoriumPlus Core.
+completely stable  are created regularly to indicate new official, stable release versions of VectoriumPlus Core.
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
