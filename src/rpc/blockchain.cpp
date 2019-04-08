@@ -605,6 +605,28 @@ UniValue getblock(const UniValue& params, bool fHelp)
     LOCK(cs_main);
 
     std::string strHash = params[0].get_str();
+// If height is supplied, find the hash
+if (strHash.size() < (2 * sizeof(uint256))) {
+// std::stoi allows characters, whereas we want to be strict
+/*
+regex r("[[:digit:]]+");
+if (!regex_match(strHash, r)) {
+throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid block height parameter");
+}
+*/
+int nHeight = -1;
+try {
+nHeight = std::stoi(strHash);
+}
+catch (const std::exception &e) {
+throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid block height parameter");
+}
+
+if (nHeight < 0 || nHeight > chainActive.Height()) {
+throw JSONRPCError(RPC_INVALID_PARAMETER, "Block height out of range");
+}
+strHash = chainActive[nHeight]->GetBlockHash().GetHex();
+}
     uint256 hash(uint256S(strHash));
 
     bool fVerbose = true;

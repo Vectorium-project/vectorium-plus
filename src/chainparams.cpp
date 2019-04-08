@@ -92,7 +92,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1564617600; // August 1st, 2019
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00");
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000000045638c02d");
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -134,11 +134,11 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x1ad07a62b346532c3c2806e8ba0e462704859d590f7df86a3b8d79993f9b2e5c"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
-        vSeeds.push_back(CDNSSeedData("seed1-vctp.vectorium.co", "seed1-vctp.vectorium.co", false));
-        vSeeds.push_back(CDNSSeedData("seed2-vctp.vectorium.co", "seed2-vctp.vectorium.co", false));
-        vSeeds.push_back(CDNSSeedData("seed3-vctp.vectorium.co", "seed3-vctp.vectorium.co", false));
-        vSeeds.push_back(CDNSSeedData("seed4-vctp.vectorium.co", "seed4-vctp.vectorium.co", false));
-        vSeeds.push_back(CDNSSeedData("seed5-vctp.vectorium.co", "seed5-vctp.vectorium.co", false));
+        vSeeds.push_back(CDNSSeedData("seed1-vctp.vectorium.co", "seed1-vctp.vectorium.co"));
+        vSeeds.push_back(CDNSSeedData("seed2-vctp.vectorium.co", "seed2-vctp.vectorium.co"));
+        vSeeds.push_back(CDNSSeedData("seed3-vctp.vectorium.co", "seed3-vctp.vectorium.co"));
+        vSeeds.push_back(CDNSSeedData("seed4-vctp.vectorium.co", "seed4-vctp.vectorium.co"));
+        vSeeds.push_back(CDNSSeedData("seed5-vctp.vectorium.co", "seed5-vctp.vectorium.co"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,56);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
@@ -156,11 +156,13 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (0, uint256S("0x0000045c4fb6799ddce4ad8c977f2ce968f8ea8edca25bd67072ac990562404d")),
-            1550147522, // * UNIX timestamp of last checkpoint block
-            0,   // * total number of transactions between genesis and last checkpoint
+            (0, uint256S("0x0000045c4fb6799ddce4ad8c977f2ce968f8ea8edca25bd67072ac990562404d"))
+            (500, uint256S("0x249651e77bcd2efa06733a43e5705a00ffe7a320ef76ede0e79c26f1c6c0d858"))
+            (1155, uint256S("0x04375aad2ae180a94620288abe372e16ca8b887de61577433fe7bb03158dff7c")),
+            1551439053, // * UNIX timestamp of last checkpoint block
+            2173,   // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
-            0.0     // * estimated number of transactions per day after checkpoint
+            10000.0     // * estimated number of transactions per day after checkpoint
         };
     }
 };
@@ -178,7 +180,7 @@ public:
         consensus.nMajorityWindow = 100;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 24 * 60 * 60; // 1 day
-        consensus.nPowTargetSpacing = 5;
+        consensus.nPowTargetSpacing = 2;
         consensus.nLastPOWBlock = 4000;
         consensus.nStakeMinAge = 30;
         consensus.nModifierInterval = 60;
@@ -205,7 +207,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1564617600; // August 1st, 2019
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00");
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000053704a6a");
 
         pchMessageStart[0] = 0x72;
         pchMessageStart[1] = 0x11;
@@ -222,7 +224,7 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
-        vSeeds.push_back(CDNSSeedData("VectoriumPlus.net", "testnet-seed1.VectoriumPlus.net", false));
+        vSeeds.push_back(CDNSSeedData("VectoriumPlus.net", "testnet-seed1.VectoriumPlus.net"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
